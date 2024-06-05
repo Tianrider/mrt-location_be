@@ -31,7 +31,6 @@ router.post("/add", multer().none(), async (req, res) => {
 		});
 
 		// set user to a device
-
 		const device = await Device.findOne({userID: null});
 		if (!device) {
 			return res.status(400).json({message: "No available device"});
