@@ -7,8 +7,9 @@ const deviceSchema = new mongoose.Schema({
 		ref: "User",
 		required: false,
 	},
-	magnitude: {type: String, required: true},
+	latitude: {type: String, required: true},
 	longitude: {type: String, required: true},
+	alert: {type: Boolean, required: true, default: false},
 	timeStamp: {type: String, required: true},
 });
 
