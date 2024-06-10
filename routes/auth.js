@@ -5,8 +5,8 @@ const Admin = require("../models/admin");
 const multer = require("multer");
 
 router.post("/login", multer().none(), async (req, res) => {
-	const {username, password} = req.body;
-	const user = await Admin.findOne({username});
+	const {email, password} = req.body;
+	const user = await Admin.findOne({email});
 	if (!user) {
 		return res.status(400).json({message: "User not found"});
 	}
@@ -25,8 +25,8 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/change-pass", multer().none(), async (req, res) => {
-	const {username, oldPassword, newPassword} = req.body;
-	const user = await Admin.findOne({username});
+	const {email, oldPassword, newPassword} = req.body;
+	const user = await Admin.findOne({email});
 	if (!user) {
 		return res.status(400).json({message: "User not found"});
 	}
