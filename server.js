@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 const port = process.env.PORT || 3000;
 
 const uri =
-	"mongodb+srv://hadiwijayachristian7:uXj9nmxGabUkMnG8@mrt-location.evlwfff.mongodb.net/?retryWrites=true&w=majority&appName=mrt-location";
+	"SECRET";
 
 mongoose.connect(uri);
 const connection = mongoose.connection;
